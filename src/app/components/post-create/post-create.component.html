@@ -1,1 +1,14 @@
-<p>post-create works!</p>
+<div class="container">
+    <div class="alert alert-danger" *ngIf="submitted ==true">
+        <span *ngIf="title.errors != null">Error found</span>
+    </div>
+    <form class="example-form" [formGroup]="frmPost" (ngSubmit)="onSubmit($event)"> 
+        <mat-form-field class="example-full-width">
+        <input matInput placeholder="Title" formControlName="title">
+        </mat-form-field><br>
+        <mat-form-field>
+          <textarea matInput placeholder="Body" formControlName="body"></textarea>
+        </mat-form-field><br>
+        <button mat-raised-button color="primary">Submit</button>
+    </form>
+</div>

@@ -1,0 +1,12 @@
+<h1>Photos</h1>
+
+<form class="example-form" (ngSubmit)="searchForm()">
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Search Photo Title" [(ngModel)]="searchTitle">
+    </mat-form-field>
+    <button mat-button color="primary" type="submit">Search</button>
+</form>
+<div *ngFor="let p of photos">
+    <img src="{{ p.thumbnailUrl }}">
+    <h4>{{ p.title }}</h4>
+</div>
